@@ -1,0 +1,126 @@
+
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    margin-bottom: 20px;
+  }
+  
+  nav a {
+    padding: 8px 15px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  nav a.active {
+    background-color: #0056b3;
+    color: white;
+    border-color: #0056b3;
+  } 
+  .nav-container {
+    display: flex;
+    justify-content: space-between; /* Aligns left and right */
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+   
+  .nav-links, .auth-section {
+    display: flex;
+    gap: 20px; /* Adds space between items */
+  }
+   
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .username-display {
+    font-size: 1.2em; /* Make it a bit larger */
+    color: #040c13; /* Use the primary blue color (or your brand color) */
+    font-weight: bold;
+    font-style: italic;  /* Make it bold for emphasis */
+    text-transform: uppercase; /* Make the text uppercase */
+}
+   
+  button {
+    background-color: blue;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* src/app/app.component.css */
+
+header {
+  background-color: #f0f0f0; /* Light gray background for header */
+  padding: 10px 0; /* Add some padding top and bottom */
+}
+
+nav ul {
+  list-style: none; /* Remove default list bullets */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox to arrange list items horizontally */
+  justify-content: center; /* Center the nav links horizontally if you want */
+}
+
+nav ul li {
+  margin: 0 15px; /* Add horizontal spacing between list items */
+}
+
+nav ul li:first-child {
+  margin-left: 0; /* Remove left margin from the first item */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remove right margin from the last item */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #333; /* Dark gray link color */
+  padding: 8px 12px; /* Add padding around link text for better click area */
+  border-radius: 5px; /* Optional: rounded corners for links */
+  display: block; /* Make links block-level for padding to work correctly */
+}
+
+nav ul li a:hover {
+  background-color: #ddd; /* Lighter background on hover */
+  color: #000; /* Black color on hover */
+}
+
+.username-display {
+  font-size: 1.1em;
+  color: #555;
+  margin-right: 15px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: #e9ecef;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+nav ul li button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #dc3545; /* Red background for logout button */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav ul li button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}

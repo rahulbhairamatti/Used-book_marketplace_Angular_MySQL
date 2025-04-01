@@ -1,0 +1,268 @@
+<!-- <div class="order-history-container">
+  <h1>Order History</h1>
+  <p>This page will display your past order history once implemented.</p>
+  <p>Currently, this is a placeholder.</p>
+</div> -->
+<!-- <div class="order-history-container">
+  <h1>Order History</h1>
+
+  <div *ngIf="authService.isLoggedIn$ | async; else notLoggedIn">
+    <div class="orders-section">
+      <h2>Orders You've Placed (Bought)</h2>
+      <ul *ngIf="boughtOrders && boughtOrders.length > 0; else noBoughtOrders">
+        <li *ngFor="let order of boughtOrders">
+          <div class="order-summary">
+            <h3>Order ID: {{ order.order_id }}</h3>
+            <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+            <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+            <p>Payment Method: {{ order.payment_method }}</p>
+            <p>Order Status: {{ order.order_status }}</p>
+          </div>
+          <div class="order-items">
+            <h4>Items in this Order:</h4>
+            <ul>
+              <li *ngFor="let item of order.OrderItems">
+                {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ng-template #noBoughtOrders>
+        <p>You haven't placed any orders yet.</p>
+      </ng-template>
+    </div>
+
+    <div class="orders-section">
+      <h2>Orders for Your Products (Sold)</h2>
+      <ul *ngIf="soldOrders && soldOrders.length > 0; else noSoldOrders">
+        <li *ngFor="let order of soldOrders">
+          <div class="order-summary">
+            <h3>Order ID: {{ order.order_id }} (Buyer ID: {{ order.buyer_id }})</h3>
+            <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+            <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+            <p>Payment Method: {{ order.payment_method }}</p>
+            <p>Order Status: {{ order.order_status }}</p>
+          </div>
+          <div class="order-items">
+            <h4>Items in this Order:</h4>
+            <ul>
+              <li *ngFor="let item of order.OrderItems">
+                {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each (Seller ID: {{ item.seller_id }})
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ng-template #noSoldOrders>
+        <p>No orders for your products yet.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <p>Please log in to view your order history.</p>
+  </ng-template>
+</div> -->
+<!-- <div class="order-history-container">
+  <h1>Order History</h1>
+
+  <div *ngIf="authService.isLoggedIn$ | async; else notLoggedIn">
+    <div class="orders-section">
+      <h2>Orders You've Placed (Bought)</h2>
+      <ul *ngIf="boughtOrders && boughtOrders.length > 0; else noBoughtOrders">
+        <li *ngFor="let order of boughtOrders">
+          <div class="order-summary">
+            <h3>Order ID: {{ order.order_id }}</h3>
+            <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+            <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+            <p>Payment Method: {{ order.payment_method }}</p>
+            <p>Order Status: {{ order.order_status }}</p>
+          </div>
+          <div class="order-items">
+            <h4>Items in this Order:</h4>
+            <ul>
+              <li *ngFor="let item of order.OrderItems">
+                {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ng-template #noBoughtOrders>
+        <p>You haven't placed any orders yet.</p>
+      </ng-template>
+    </div>
+
+    <div class="orders-section">
+      <h2>Orders for Your Products (Sold)</h2>
+      <ul *ngIf="soldOrders && soldOrders.length > 0; else noSoldOrders">
+        <li *ngFor="let order of soldOrders">
+          <div class="order-summary">
+            <h3>Order ID: {{ order.order_id }} (Buyer ID: {{ order.buyer_id }})</h3>
+            <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+            <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+            <p>Payment Method: {{ order.payment_method }}</p>
+            <p>Order Status: {{ order.order_status }}</p>
+          </div>
+          <div class="order-items">
+            <h4>Items in this Order:</h4>
+            <ul>
+              <li *ngFor="let item of order.OrderItems">
+                {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each (Seller ID: {{ item.seller_id }})
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ng-template #noSoldOrders>
+        <p>No orders for your products yet.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <p>Please log in to view your order history.</p>
+  </ng-template>
+</div> -->
+<!-- 
+<div class="order-history-container">
+    <h2>Order History</h2>
+
+    <div *ngIf="loading" class="loading-indicator">Loading order history...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div *ngIf="!loading && !error && orderHistory.length === 0" class="no-orders">
+        You have no past orders.
+    </div>
+
+    <div *ngIf="!loading && !error && orderHistory.length > 0">
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Total Amount</th>
+                    <th>Payment Method</th>
+                    <th>Items</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orderHistory">
+                    <td>{{ order.order_id }}</td>
+                    <td>{{ order.order_date | date:'medium' }}</td> <td>{{ order.total_amount | currency:'USD' }}</td> <td>{{ order.payment_method }}</td>
+                    <td>
+                        <ul class="order-item-list">
+                            <li *ngFor="let item of order.orderItems">
+                                {{ item.product_title }} (Quantity: {{ item.quantity }}, Price at Purchase: {{ item.price_at_purchase | currency:'USD' }})
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+<!-- order-history.component.html -->
+
+<!-- <div class="order-history-container">
+  <h1>Order History</h1>
+
+  <div *ngIf="authService.isLoggedIn$ | async; else notLoggedIn">
+      <div class="orders-section">
+          <h2>Orders You've Placed (Bought)</h2>
+          <ul *ngIf="boughtOrders && boughtOrders.length > 0; else noBoughtOrders">
+              <li *ngFor="let order of boughtOrders">
+                  <div class="order-summary">
+                      <h3>Order ID: {{ order.order_id }}</h3>
+                      <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+                      <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+                      <p>Payment Method: {{ order.payment_method }}</p>
+                      <p>Order Status: {{ order.order_status }}</p>
+                      <p>Shipping City: {{ order.shipping_city }}</p>  </div>
+                  <div class="order-items">
+                      <h4>Items in this Order:</h4>
+                      <ul>
+                          <li *ngFor="let item of order.OrderItems">
+                              {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+          <ng-template #noBoughtOrders>
+              <p>You haven't placed any orders yet.</p>
+          </ng-template>
+      </div>
+
+      <div class="orders-section">
+          <h2>Orders for Your Products (Sold)</h2>
+          <ul *ngIf="soldOrders && soldOrders.length > 0; else noSoldOrders">
+              <li *ngFor="let order of soldOrders">
+                  <div class="order-summary">
+                      <h3>Order ID: {{ order.order_id }} (Buyer ID: {{ order.buyer_id }})</h3>
+                      <p>Order Date: {{ order.order_date | date:'medium' }}</p>
+                      <p>Total Amount: {{ order.total_amount | currency:'USD' }}</p>
+                      <p>Payment Method: {{ order.payment_method }}</p>
+                      <p>Order Status: {{ order.order_status }}</p>
+                      <p>Shipping City: {{ order.shipping_city }}</p>  </div>
+                  <div class="order-items">
+                      <h4>Items in this Order:</h4>
+                      <ul>
+                          <li *ngFor="let item of order.OrderItems">
+                              {{ item.quantity }} x {{ item.Products.title }} by {{ item.Products.author }} at {{ item.price_at_purchase | currency:'USD' }} each (Seller ID: {{ item.seller_id }})
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+          <ng-template #noSoldOrders>
+              <p>No orders for your products yet.</p>
+          </ng-template>
+      </div>
+  </div>
+
+  <ng-template #notLoggedIn>
+      <p>Please log in to view your order history.</p>
+  </ng-template>
+</div> -->
+<!-- <div class="order-history-container">
+    <h2>Order History</h2>
+  
+    <div *ngIf="loading" class="loading-indicator">Loading order history...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+    <div *ngIf="!loading && !error && orderHistory.length === 0" class="no-orders">
+      You have no past orders.
+    </div>
+  
+    <div *ngIf="!loading && !error && orderHistory.length > 0">
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+            <th>Payment Method</th>
+            <th>Items</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orderHistory">
+            <td>{{ order.order_id }}</td>
+            <td>{{ order.order_date | date:'medium' }}</td>
+            <td>{{ order.total_amount | currency:'USD' }}</td>
+            <td>{{ order.payment_method }}</td>
+            <td>
+              <ul class="order-item-list">
+                <li *ngFor="let item of order.orderItems">
+                  {{ item.product_title }} (Quantity: {{ item.quantity }}, Price at Purchase: {{ item.price_at_purchase | currency:'USD' }})
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+   -->

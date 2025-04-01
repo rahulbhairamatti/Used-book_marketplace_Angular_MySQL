@@ -1,0 +1,60 @@
+// {
+//     "compilerOptions": {
+//       "target": "es2022",  // Or "es2017", "es2018", etc., depending on your target browser support. es2022 is relatively modern JavaScript.
+//       "module": "es2020",   // Or "commonjs" if you are using CommonJS modules
+//       "moduleResolution": "node",
+//       "allowJs": true,      // Allow JavaScript files in the project
+//       "outDir": "../out-tsc/app", // Output directory for any compiled JS (though we aren't compiling TS, Angular CLI might still use this)
+//       "baseUrl": "./",
+//       "paths": {},
+//       "types": [],
+//       "lib": [
+//         "es2022", // Or match your target ES version
+//         "dom"
+//       ]
+//     },
+//     "files": [
+//       "main.js",       // Include your main.js file
+//       "polyfills.js"  // Include polyfills.js if you have one, or you can remove this line if you don't have a separate polyfills.js, or adjust based on your setup.
+//     ],
+//     "include": [
+//       "**/*.js"      // Include all .js files in the src directory and subdirectories
+//     ],
+//     "exclude": [
+//       "**/*.spec.js" // Exclude test files
+//     ]
+//   }
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist/out-tsc", // You can keep this or change if needed, not critical for JS
+      "forceConsistentCasingInFileNames": true,
+      "strict": false,           // IMPORTANT: Set strict to false for JavaScript projects
+      "noImplicitOverride": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "sourceMap": true,
+      "declaration": false,
+      "downlevelIteration": true,
+      "experimentalDecorators": true,  // IMPORTANT: Ensure experimentalDecorators is true
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "target": "ES2022",          // Or "es2020", "es2019", etc. - modern ES version
+      "module": "es2020",          // Or "esnext" - modern ES module system
+      "lib": [
+        "es2022",                 // Match target ES version
+        "dom"
+      ],
+       "allowJs": true,           // IMPORTANT:  allowJs: true - to allow JavaScript files
+       "checkJs": false          // IMPORTANT:  checkJs: false - to disable TypeScript checking of JS (optional, can be true or false)
+    },
+    "angularCompilerOptions": {
+      "enableI18nLegacyMessageIdFormat": false,
+      "strictInjectionParameters": false,
+      "fullTemplateTypeCheck": false,
+      "strictTemplates": false
+    }
+  }
+  

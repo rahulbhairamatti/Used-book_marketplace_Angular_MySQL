@@ -1,0 +1,25 @@
+.order-confirmation-container {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+strong {
+  color: #4CAF50;
+}

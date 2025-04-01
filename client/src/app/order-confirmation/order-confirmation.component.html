@@ -1,0 +1,68 @@
+<!-- <div class="order-confirmation-container">
+  <h1>Order Confirmation</h1>
+  <div *ngIf="orderId">
+    <p>Thank you for your order!</p>
+    <p>Your Order ID is: <strong>{{ orderId }}</strong></p>
+    <p>You will receive an email confirmation shortly with order details.</p>
+  </div>
+  <div *ngIf="!orderId">
+    <p>Order confirmation details are not available.</p>
+    <p>Please check your order history or contact customer support.</p>
+  </div>
+</div> -->
+<div class="order-confirmation-container">
+  <h1>Order Confirmation</h1>
+  <div *ngIf="orderId; else noOrder">
+    <p>Thank you for your order!</p>
+    <p>Your order ID is: <strong>{{ orderId }}</strong>.</p>
+    <p>Your order has been placed successfully.</p>
+  </div>
+  <ng-template #noOrder>
+    <p>No order ID found.</p>
+    <p>Please ensure you have completed the checkout process correctly.</p>
+  </ng-template>
+</div>
+<!-- <div class="order-confirmation-container">
+    <h2>Order Confirmation</h2>
+  
+    <div *ngIf="loading" class="loading-indicator">Loading order details...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+    <div *ngIf="!loading && !error && orderDetails">
+      <p>Thank you for your order! Your order ID is: <strong>{{ orderDetails.order_id }}</strong></p>
+      <p>Order Date: {{ orderDetails.order_date | date:'medium' }}</p>
+      <p>Total Amount: {{ orderDetails.total_amount | currency:'USD' }}</p>
+      <p>Payment Method: {{ orderDetails.payment_method }}</p>
+  
+      <h3>Order Items:</h3>
+      <ul class="order-item-list">
+        <li *ngFor="let item of orderDetails.items">
+          {{ item.product_title }} by {{ item.product_author }} (Quantity: {{ item.quantity }}, Price: {{ item.price_at_purchase | currency:'USD' }})
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <!-- <div class="order-confirmation-container">
+    <h2>Order Confirmation</h2>
+  
+    <div *ngIf="loading" class="loading-indicator">Loading order details...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+    <div *ngIf="!loading && !error && orderDetails">
+      <p>Thank you for your order! Your order ID is: <strong>{{ orderDetails.order_id }}</strong></p>
+      <p>Order Date: {{ orderDetails.order_date | date:'medium' }}</p>
+      <p>Total Amount: {{ orderDetails.total_amount | currency:'USD' }}</p>
+      <p>Payment Method: {{ orderDetails.payment_method }}</p>
+      <h3>Shipping Address:</h3>
+      <div class="shipping-address">
+        <p><strong>Street:</strong> {{ orderDetails.shipping_address?.street || 'N/A' }}</p>
+        <p><strong>City:</strong> {{ orderDetails.shipping_address?.city || 'N/A' }}</p>  </div>
+  
+      <h3>Order Items:</h3>
+      <ul class="order-item-list">
+        <li *ngFor="let item of orderDetails.items">
+          {{ item.product_title }} by {{ item.product_author }} (Quantity: {{ item.quantity }}, Price: {{ item.price_at_purchase | currency:'USD' }})
+        </li>
+      </ul>
+    </div>
+  </div> -->

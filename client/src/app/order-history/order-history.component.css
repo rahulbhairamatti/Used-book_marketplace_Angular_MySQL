@@ -1,0 +1,92 @@
+/* src/app/order-history/order-history.component.css */
+
+.order-history-container {
+    font-family: 'Arial', sans-serif; /* Choose a clean, readable font */
+    max-width: 960px; /* Limit container width for better readability on larger screens */
+    margin: 20px auto; /* Center the container on the page */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.order-history-container h2 {
+    color: #333; /* Darker heading color */
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd; /* Light border under heading */
+    padding-bottom: 10px;
+}
+
+.loading-indicator, .error-message, .no-orders {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.loading-indicator {
+    color: #777; /* Gray color for loading text */
+}
+
+.error-message {
+    color: #d32f2f; /* Red color for error text */
+    background-color: #ffebee; /* Light red background for error box */
+    border: 1px solid #ef9a9a; /* Light red border */
+}
+
+.no-orders {
+    color: #555; /* Gray color for no orders message */
+    background-color: #f0f0f0; /* Slightly darker background */
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse; /* Single border for table */
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for table */
+    border-radius: 8px;
+    overflow: hidden; /* To ensure rounded corners are applied */
+}
+
+.order-table thead {
+    background-color: #007bff; /* Bootstrap primary color, you can change */
+    color: white; /* White text for header */
+    font-weight: bold;
+}
+
+.order-table th, .order-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Separator line for rows */
+}
+
+.order-table th {
+    text-transform: uppercase; /* Uppercase table headers */
+    font-size: 0.9em;
+}
+
+.order-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.order-table tbody tr:hover {
+    background-color: #e0e0e0; /* Lighter gray on hover */
+}
+
+.order-item-list {
+    list-style: none; /* Remove default list bullets */
+    padding-left: 0; /* Remove default list padding */
+}
+
+.order-item-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee; /* Dashed line between order items */
+    margin-bottom: 8px;
+}
+
+.order-item-list li:last-child {
+    border-bottom: none; /* Remove border for the last item in the list */
+    margin-bottom: 0;
+}

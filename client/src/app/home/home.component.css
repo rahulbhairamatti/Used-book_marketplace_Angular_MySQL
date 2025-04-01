@@ -1,0 +1,129 @@
+/* client/src/app/home/home.component.css */
+.home-container {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    margin: 0 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  a:hover {
+    background-color: #0056b3;
+  }
+  /* home.component.css */
+
+.home-container {
+  background-color: #f4f4f4;
+  padding: 50px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  /* Background image and blend mode are now set in CSS */
+  /* You can set the background image URL here or in your HTML (see below) */
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+
+/* If you want to set background image via CSS, uncomment and replace URL */
+/* .home-container {
+  background-image: url('URL_OF_YOUR_BACKGROUND_IMAGE_HERE');
+} */
+
+.header-image {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.welcome-paragraph {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.nav-links-container {
+  margin-bottom: 40px;
+}
+.home-container {
+  background-color: lightcoral; /* Very obvious background color */
+  padding: 50px;
+  border: 5px solid black; /* Obvious border */
+}
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-link-browse {
+  background-color: #007bff;
+  color: white;
+}
+
+.nav-link-sell {
+  background-color: #28a745;
+  color: white;
+}
+
+
+
+.nav-link-cart {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.quote-container {
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-quote {
+  font-size: 1.8em;
+  font-style: italic;
+  color: black;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.quote-author {
+  font-size: 0.8em;
+  font-style: normal;
+  color: #777;
+  text-align: right;
+}
+
+.quote-image {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.footer-text {
+  font-size: 0.9em;
+  color: #777;
+}

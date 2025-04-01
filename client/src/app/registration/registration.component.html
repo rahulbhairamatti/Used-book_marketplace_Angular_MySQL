@@ -1,0 +1,154 @@
+ <div class="registration-container">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" formControlName="username" required>
+            <div *ngIf="registrationForm.get('username')?.invalid && (registrationForm.get('username')?.dirty || registrationForm.get('username')?.touched)" class="error-message">
+                <div *ngIf="registrationForm.get('username')?.errors?.['required']">
+                    Username is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email (Optional):</label>
+            <input type="email" id="email" name="email" formControlName="email">
+            <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)" class="error-message">
+                <div *ngIf="registrationForm.get('email')?.errors?.['email']">
+                    Invalid email format.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" formControlName="password" required>
+            <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="error-message">
+                <div *ngIf="registrationForm.get('password')?.errors?.['required']">
+                    Password is required.
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-button">Register</button>
+    </form>
+
+    <div *ngIf="message" class="message" [class.error]="registrationFailed" [class.success]="!registrationFailed">
+        {{ message }}
+    </div><div *ngIf="isRegistered">
+        <p>Thank you for registering!</p>
+        <p>Please <a routerLink="/login">login here</a>.</p>
+      </div>
+</div> 
+
+<!-- <div class="registration-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="registrationData.username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>  <input type="email" id="email" name="email" [(ngModel)]="registrationData.email">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="registrationData.password" required>
+      </div>
+  
+      <button type="submit" class="register-button">Register</button>
+      <p *ngIf="message" [ngClass]="{'success-message': !registrationFailed, 'error-message': registrationFailed}">{{ message }}</p>
+    </form>
+  </div> -->
+  <!-- <div class="registration-container">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">  <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" formControlName="username" required> <div *ngIf="registrationForm.get('username')?.invalid && (registrationForm.get('username')?.dirty || registrationForm.get('username')?.touched)" class="error-message">
+          <div *ngIf="registrationForm.get('username')?.errors?.['required']">
+            Username is required.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email (Optional):</label>
+        <input type="email" id="email" name="email" formControlName="email"> <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)" class="error-message">
+          <div *ngIf="registrationForm.get('email')?.errors?.['email']">
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" formControlName="password" required> <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="error-message">
+          <div *ngIf="registrationForm.get('password')?.errors?.['required']">
+            Password is required.
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit" class="register-button">Register</button>
+    </form>
+  
+    <div *ngIf="message" class="message" [class.error]="registrationFailed" [class.success]="!registrationFailed">
+      {{ message }}
+    </div>
+  </div> -->
+<!-- <div class="registration-container">
+    <h2>Register</h2>
+  
+    <div *ngIf="message" class="message" [ngClass]="{'success': isRegistered, 'error': !isRegistered}">
+      {{ message }}
+    </div>
+  
+    <form (ngSubmit)="onSubmit()" *ngIf="!isRegistered">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="registrationData.username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="registrationData.password" required>
+      </div>
+  
+      <button type="submit" class="submit-button">Register</button>
+    </form>
+  
+    <div *ngIf="isRegistered">
+      <p>Thank you for registering!</p>
+      <p>Please <a routerLink="/login">login here</a>.</p>
+    </div>
+  </div> -->
+<!-- <div class="registration-container">
+
+    <h2>Register</h2>
+  
+    <div *ngIf="message" class="message" [ngClass]="{'success': isRegistered, 'error': !isRegistered}">
+      {{ message }}
+    </div>
+  
+    <form (ngSubmit)="onSubmit()" *ngIf="!isRegistered">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="registrationData.username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="registrationData.password" required>
+      </div>
+  
+      <button type="submit" class="submit-button">Register</button>
+    </form>
+  
+    <div *ngIf="isRegistered">
+      <p>Thank you for registering!</p>
+      <p>Please <a routerLink="/login">login here</a>.</p>
+    </div>
+  </div> -->

@@ -1,0 +1,119 @@
+/* Style for the main form container */
+form {
+  max-width: 600px; /* Adjust as needed */
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+}
+
+/* Style for individual form groups (label and input) */
+form > div {
+  margin-bottom: 20px;
+}
+
+/* Style for labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for text input fields, number inputs, and the select dropdown */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: calc(100% - 22px); /* Full width with padding adjustment */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+  box-sizing: border-box; /* Ensure padding and border are inside the element's width */
+}
+
+/* Style for the textarea (description) */
+textarea {
+  min-height: 100px;
+}
+
+/* Style for the select dropdown */
+select {
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23343a40" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 8.6L3.4 12.44a.475.475 0 0 1-.67-.67l3.9-3.9a.475.475 0 0 1 .67 0l3.9 3.9a.475.475 0 1 1-.67.67L8.753 8.6a.475.475 0 0 1-.67 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 12px;
+}
+
+/* Style for the "Suggest Price" button */
+form > div > button[type="button"] {
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+form > div > button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the price suggestion message */
+.suggestion-message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f8ff; /* Light blue background */
+  border: 1px solid #add8e6; /* Light blue border */
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+}
+body {
+  background-image: url('/client/src/assets/images/background-image.jpg'); /* Replace with the actual path */
+  background-size: cover; /* This will make the image cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent the image from tiling */
+  background-attachment: fixed; /* Optional: Keeps the background fixed while scrolling */
+  /* You might want to add a background-color as a fallback if the image fails to load */
+  background-color: #f4f1de; /* Or any other suitable color */
+}
+
+/* Style for the main submit button */
+button[type="submit"] {
+  background-color: #28a745; /* Or your chosen green */
+  color: white;
+  padding: 12px 20px; /* Reduced padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px; /* Slightly smaller font */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  /* Remove these lines to make it not full width: */
+  /* display: block;
+  width: 100%;
+  box-sizing: border-box; */
+}
+
+button[type="submit"]:hover {
+  background-color: #1e7e34; /* Or your desired hover color */
+}
+/* Style for the general message div */
+.message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #d4edda; /* Light green background */
+  border: 1px solid #c3e6cb; /* Light green border */
+  border-radius: 4px;
+  color: #155724; /* Dark green text */
+  text-align: center;
+  font-size: 16px;
+}

@@ -1,0 +1,132 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
+  </div>
+  <div>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" [(ngModel)]="book.author" required>
+  </div>
+  <div>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" [(ngModel)]="book.genre" required>
+  </div>
+  <div>
+    <label for="condition">Book Condition:</label>
+    <select id="condition" name="condition" [(ngModel)]="book.condition" required (change)="suggestPrice()">
+      <option value="Like New">Like New</option>
+      <option value="Good">Good</option>
+      <option value="Acceptable">Acceptable</option>
+      <option value="Worn">Worn</option>
+    </select>
+    <button type="button" (click)="suggestPrice()">Suggest Price</button>
+  </div>
+  <div *ngIf="priceSuggestion" class="suggestion-message">{{ priceSuggestion }}</div>
+  <div>
+    <label for="price">Price (USD):</label>
+    <input type="number" id="price" name="price" [(ngModel)]="book.price" required>
+  </div>
+  <div>
+    <label for="quantity">Quantity:</label> <input type="number" id="quantity" name="quantity" [(ngModel)]="book.quantity" required min="1">
+  </div>
+  <div>
+    <label for="seller_name">Seller Name:</label>  
+    <input type="text" id="seller_name" name="seller_name" [(ngModel)]="book.seller_name" required>  </div>
+    <!-- <div>
+      <label for="seller_name">Seller Name:</label>
+      <input type="text" id="seller_name" name="seller_name" [(ngModel)]="book.seller_name" required>
+  </div> -->
+<!-- 
+  <div>
+      <label for="imageFile">Upload Image:</label>
+      <input type="file" id="imageFile" name="imageFile" (change)="onFileSelected($event)">
+  </div> -->
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="book.description"></textarea>
+  </div>
+  <button type="submit">List Book for Sale</button>
+</form>
+
+<div *ngIf="message" class="message">{{ message }}</div>
+
+
+<!-- <h1>Sell Your Book</h1>
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
+  </div>
+  <div>
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" [(ngModel)]="book.author" required>
+  </div>
+  <div>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" name="genre" [(ngModel)]="book.genre" required>
+  </div>
+  <div>
+    <label for="condition">Condition:</label>
+    <select id="condition" name="condition" [(ngModel)]="book.condition" required>
+      <option value="Like New">Like New</option>
+      <option value="Good">Good</option>
+      <option value="Acceptable">Acceptable</option>
+      <option value="Worn">Worn</option>
+    </select>
+  </div>
+  <div>
+    <label for="price">Price (USD):</label>
+    <input type="number" id="price" name="price" [(ngModel)]="book.price" required>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="book.description"></textarea>
+  </div>
+  <div>
+    <label for="image_url">Image URL:</label>
+    <input type="text" id="image_url" name="image_url" [(ngModel)]="book.image_url">
+  </div>
+
+  <button type="submit">List Book for Sale</button>
+</form>
+
+<div *ngIf="message" class="message">{{ message }}</div> -->
+<!-- <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
+    </div>
+    <div>
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" [(ngModel)]="book.author" required>
+    </div>
+    <div>
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" [(ngModel)]="book.genre" required>
+    </div>
+    <div>
+      <label for="condition">Book Condition:</label>
+      <select id="condition" name="condition" [(ngModel)]="book.condition" required (change)="suggestPrice()">  <option value="Like New">Like New</option>
+        <option value="Good">Good</option>
+        <option value="Acceptable">Acceptable</option>
+        <option value="Worn">Worn</option>
+      </select>
+      <button type="button" (click)="suggestPrice()">Suggest Price</button> </div>
+    <div *ngIf="priceSuggestion" class="suggestion-message">{{ priceSuggestion }}</div> <div>
+      <label for="price">Price (USD):</label>
+      <input type="number" id="price" name="price" [(ngModel)]="book.price" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="book.description"></textarea>
+    </div> -->
+    <!-- <div>
+       <label for="image_url">Image URL:</label>
+      <input type="text" id="image_url" name="image_url" [(ngModel)]="book.image_url">
+    </div>  
+  
+    <button type="submit">List Book for Sale</button>
+  </form>
+  
+  <div *ngIf="message" class="message">{{ message }}</div> -->

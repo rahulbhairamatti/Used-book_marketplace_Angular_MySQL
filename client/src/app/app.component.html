@@ -1,0 +1,121 @@
+<header>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/products">Buy Books</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="/sell-book">Sell Book</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+      <li *ngIf="isLoggedIn">
+        <span class="username-display" *ngIf="username">Welcome -> {{ username }}</span>
+        <button (click)="logout()">Logout</button>
+      </li>
+      
+      <li *ngIf="isLoggedIn"><a routerLink="/cart">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <header>  <li *ngIf="isLoggedIn"><a routerLink="/orders/history">Order History</a></li>  
+  <nav>
+      <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/products">Buy Books</a></li>
+          <li><a routerLink="/sell-book">Sell Book</a></li>
+
+          <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+          <li *ngIf="authService.isLoggedIn()">
+              <span class="username-display" *ngIf="username">Welcome, {{ username }}</span>
+              <button (click)="logout()">Logout</button>
+              <li><a routerLink="/order-history">Order History</a></li>  
+          <li routerLink="/cart"><a routerLink="/cart">Cart</a></li>
+      </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div> -->
+<!-- <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a> |
+    <a routerLink="/products" routerLinkActive="active">Buy Books</a> |
+    <a routerLink="/sell-book" routerLinkActive="active">Sell Book</a> |
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a> 
+
+ </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div> -->
+  <!-- <header>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/books">Buy Books</a></li>
+            <li><a routerLink="/sell">Sell Book</a></li>
+
+             <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+            <li *ngIf="authService.isLoggedIn()">
+                <span class="username-display" *ngIf="username">Welcome, {{ username }}</span>
+                <button (click)="logout()">Logout</button>
+            </li>
+            <li routerLink="/cart"><a routerLink="/cart">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <router-outlet></router-outlet>  </div> -->
+    <!-- <header>
+      <nav class="nav-container">
+        <div class="nav-links">
+          <a routerLink="/Home">Home</a>
+          <a routerLink="/products">Buy Books</a>
+          <a routerLink="/sell-book">Sell Book</a>
+        </div>
+     
+        <div class="auth-section">
+           Show "Login" only if the user is NOT logged in -->
+          <!-- <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
+     
+           Show "Logout", username, order history, and cart only if user is logged in -->
+          <!-- <div *ngIf="authService.isLoggedIn()" class="user-actions">
+            <span class="username-display" *ngIf="username">Welcome, {{ username }}</span>
+            <button (click)="logout()">Logout</button>
+            <a routerLink="/order-history">Order History</a>
+            <a routerLink="/cart">Cart 🛒</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <router-outlet></router-outlet>  </div>  -->
+      <!-- <header>
+        <nav>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/products">Buy Books</a></li>
+                <li><a routerLink="/sell-book">Sell Book</a></li>
+                 <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+                <li *ngIf="authService.isLoggedIn()">
+                  <span class="username-display" *ngIf="username">Welcome, {{ username }}</span>
+                  <button (click)="logout()">Logout</button>
+              </li>
+                 <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>
+                <li *ngIf="authService.isLoggedIn()">
+                    <span class="username-display" *ngIf="username">Welcome, {{ username }}</span>
+                    <button (click)="logout()">Logout</button>
+                </li> 
+                <li *ngIf="authService.isLoggedIn()"><a routerLink="/order-history">Order History</a></li>
+                <li><a routerLink="/cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div> -->

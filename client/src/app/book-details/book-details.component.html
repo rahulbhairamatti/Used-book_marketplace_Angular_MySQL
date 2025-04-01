@@ -1,0 +1,346 @@
+<!-- <div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre || 'N/A' }}</p>
+    <p>Condition: {{ book.book_condition || 'N/A' }}</p>
+    <p>Price: ${{ book.price }}</p>
+
+    <div *ngIf="isSold" class="sold-indicator">  SOLD  </div>
+    <div *ngIf="book.description">
+      <h3>Description</h3>
+      <p>{{ book.description }}</p>
+    </div>
+
+    <div *ngIf="book.image_url" class="book-image">
+      <img [src]="book.image_url" alt="{{ book.title }}">
+    </div> 
+
+    <button
+      (click)="addToCart(book)"
+      class="add-to-cart-button"
+      [disabled]="isSold"
+    >
+      {{ isSold ? 'Sold' : 'Add to Cart' }}
+    </button>
+  </div>
+
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+    <p>Book not found.</p>
+  </div>
+
+</div> -->
+<!-- <div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre || 'N/A' }}</p>
+    <p>Condition: {{ book.book_condition || 'N/A' }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p *ngIf="book.quantity > 0">Available Quantity: {{ book.quantity }}</p> <p *ngIf="book.quantity <= 0" class="sold-indicator">Status: SOLD</p>
+
+
+    <div *ngIf="book.quantity <= 0" class="sold-indicator">  SOLD  </div>
+    <div *ngIf="book.description">
+      <h3>Description</h3>
+      <p>{{ book.description }}</p>
+    </div>
+
+    <div *ngIf="book.quantity > 0" class="quantity-control">
+      <button (click)="decreaseQuantity()" [disabled]="quantityToAdd <= 1">-</button>
+      <span>{{ quantityToAdd }}</span>
+      <button (click)="increaseQuantity()" [disabled]="quantityToAdd >= book.quantity">+</button>
+    </div>
+
+    <button
+      (click)="addToCart()"
+      class="add-to-cart-button"
+      [disabled]="isSold"
+    >
+      Add to Cart
+    </button>
+  </div>
+
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+    <p>Book not found.</p>
+  </div>
+
+</div> -->
+<!-- <div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre || 'N/A' }}</p>
+    <p>Condition: {{ book.book_condition || 'N/A' }}</p>
+    <p>Price: ${{ book.price }}</p>
+    <p *ngIf="book.quantity_in_stock > 0">Available Quantity: {{ book.quantity_in_stock }}</p> <p *ngIf="book.quantity_in_stock <= 0" class="sold-indicator">Status: SOLD</p>
+
+
+    <div *ngIf="book.quantity_in_stock <= 0" class="sold-indicator">  SOLD  </div>
+    <div *ngIf="book.description">
+      <h3>Description</h3>
+      <p>{{ book.description }}</p>
+    </div>
+
+    <button
+      (click)="addToCart()"
+      class="add-to-cart-button"
+      [disabled]="isSold"  >
+      Add to Cart
+    </button>
+  </div>
+
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+    <p>Book not found.</p>
+  </div>
+
+</div> -->
+<!-- <div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+    <h2>{{ book.title }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre || 'N/A' }}</p>
+    <p>Condition: {{ book.book_condition || 'N/A' }}</p>
+    <p>Price: ${{ book.price }}</p>
+
+    <div *ngIf="isSold" class="sold-indicator">  SOLD  </div>  <div *ngIf="book.description">
+      <h3>Description</h3>
+      <p>{{ book.description }}</p>
+    </div>
+
+    <div *ngIf="book.image_url" class="book-image">
+      <img [src]="book.image_url" alt="{{ book.title }}">
+    </div>
+
+    <button
+      (click)="addToCart(book)"
+      class="add-to-cart-button"
+      [disabled]="isSold"  >
+      {{ isSold ? 'Sold' : 'Add to Cart' }}  </button>
+  </div>
+
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+    <p>Book not found.</p>
+  </div>
+
+</div> -->
+<div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+      <h2>{{ book.title }}</h2>
+      <p><strong>Author:</strong><span>{{ book.author }}</span></p>
+      <p><strong>Seller:</strong><span>{{ book.seller_name }}</span></p>  <p><strong>Genre:</strong> <span> {{ book.genre || 'N/A' }}</span></p>
+      <p><strong>Condition:</strong> <span> {{ book.book_condition || 'N/A' }}</span></p>
+      <p><strong>Price:</strong> <span>${{ book.price }}</span></p>
+      <p *ngIf="book.quantity_in_stock > 0"><strong>Available Quantity: </strong><span>{{ book.quantity_in_stock }}</span></p>
+      <p *ngIf="book.quantity_in_stock <= 0" class="sold-indicator">Status: SOLD</p>
+
+
+      <div *ngIf="book.quantity_in_stock <= 0" class="sold-indicator">  SOLD OUT  </div>
+      <div *ngIf="book.description">
+          <h3>Description</h3>
+          <p>{{ book.description }}</p>
+      </div>
+
+      <button
+          (click)="addToCart()"
+          class="add-to-cart-button"
+          [disabled]="isSold"   >
+          Add to Cart
+      </button>
+  </div>
+  <!-- <div class="book-details-right">
+    <img *ngIf="book.image_url" [src]="book.image_url" alt="{{ book.title }}" class="book-details-image">
+    <div *ngIf="!book.image_url" class="no-image-placeholder">No Image Available</div>
+</div> -->
+
+
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+      <p>Book not found.</p>
+  </div>
+
+
+<!-- <div class="book-details-container">
+
+  <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && book" class="book-details">
+      <h2>{{ book.title }}</h2>
+      <p>Author: {{ book.author }}</p>
+      <p>Genre: {{ book.genre || 'N/A' }}</p>
+      <p>Condition: {{ book.book_condition || 'N/A' }}</p>  <p>Price: ${{ book.price }}</p> <div *ngIf="book.description">
+          <h3>Description</h3>
+          <p>{{ book.description }}</p>
+      </div>
+
+      <div *ngIf="book.image_url" class="book-image">
+          <img [src]="book.image_url" alt="{{ book.title }}">
+      </div> -->
+
+      <!-- <button (click)="addToCart(book)" class="add-to-cart-button">Add to Cart</button>
+  
+  <div *ngIf="!loading && !error && !book" class="book-not-found">
+      <p>Book not found.</p>
+  </div>
+
+</div>
+ 
+  <div *ngIf="book">
+    <h1>Book Details</h1>
+  
+    <div class="book-details-container">
+      <img [src]="book.image_url" alt="{{ book.title }}" class="book-image">
+      <div class="book-info">
+        <h2>{{ product.title }}</h2>
+        <p><strong>Author:</strong> {{ product.author }}</p>
+        <p><strong>Genre:</strong> {{ product.genre }}</p>
+        <p><strong>Condition:</strong> {{ product.condition }}</p>
+        <p><strong>Price:</strong> {{ product.price | currency:'USD' }}</p>
+        <p><strong>Description:</strong></p>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!book">
+    <p>Loading book details...</p>
+  </div> -->
+<!--  
+  <div *ngIf="book">
+    <h1>Book Details</h1>
+  
+    <div class="book-details-container">
+      <img [src]="book.image_url" alt="{{ book.title }}" class="book-image">
+      <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Condition:</strong> {{ book.condition }}</p>
+        <p><strong>Price:</strong> {{ book.price | currency:'USD' }}</p>
+        <p><strong>Description:</strong></p>
+        <p>{{ book.description }}</p>
+  
+        <button (click)="addToCart(book)">Add to Cart</button> </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!book">
+    <p>Loading book details...</p>
+  </div> -->
+  <!-- <div class="book-details-container">
+
+    <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+    <div *ngIf="!loading && !error && book" class="book-details">
+      <h2>{{ book.title }}</h2>
+      <p>Author: {{ book.author }}</p>
+      <p>Genre: {{ book.genre || 'N/A' }}</p>
+      <p>Condition: {{ book.condition || 'N/A' }}</p>  <p>Price: ${{ book.price }}</p>
+  
+      <div *ngIf="book.description">
+        <h3>Description</h3>
+        <p>{{ book.description }}</p>
+      </div>
+  
+      <div *ngIf="book.image_url" class="book-image">
+        <img [src]="book.image_url" alt="{{ book.title }}">
+      </div>
+  
+      <button (click)="addToCart(book)" class="add-to-cart-button">Add to Cart</button>
+    </div>
+  
+    <div *ngIf="!loading && !error && !book" class="book-not-found">
+      <p>Book not found.</p>
+    </div>
+  
+  </div> -->
+  <!-- <div class="book-details-container">
+
+    <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div *ngIf="!loading && !error && book" class="book-details">
+        <h2>{{ book.title }}</h2>
+        <p>Author: {{ book.author }}</p>
+        <p>Genre: {{ book.genre || 'N/A' }}</p>
+        <p>Condition: {{ book.book_condition || 'N/A' }}</p>  <p>Price: ${{ book.price }}</p> <div *ngIf="book.description">
+            <h3>Description</h3>
+            <p>{{ book.description }}</p>
+        </div>
+
+        <div *ngIf="book.image_url" class="book-image">
+            <img [src]="book.image_url" alt="{{ book.title }}">
+        </div>
+
+        <button (click)="addToCart(book)" class="add-to-cart-button">Add to Cart</button>
+    </div>
+
+    <div *ngIf="!loading && !error && !book" class="book-not-found">
+        <p>Book not found.</p>
+    </div>
+
+</div> -->
+  <!-- <div class="book-details-container">
+
+    <div *ngIf="loading" class="loading-indicator">Loading book details...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div *ngIf="!loading && !error && book" class="book-details">
+        <h2>{{ book.title }}</h2>  <p>Author: {{ book.author }}</p> <p>Genre: {{ book.genre || 'N/A' }}</p> <p>Condition: {{ book['book condition'] || 'N/A' }}</p>  <p>Price: ${{ book.price }}</p> <div *ngIf="book.description">
+            <h3>Description</h3>
+            <p>{{ book.description }}</p> </div>
+
+        <div *ngIf="book.image_url" class="book-image">
+            <img [src]="book.image_url" alt="{{ book.title }}"> </div>
+
+        <button (click)="addToCart(book)" class="add-to-cart-button">Add to Cart</button>
+    </div>
+
+    <div *ngIf="!loading && !error && !book" class="book-not-found">
+        <p>Book not found.</p>
+    </div>
+
+</div> -->
+  <!-- <div *ngIf="book">
+    <h1>Book Details</h1>
+  
+    <div class="book-details-container">
+      <img [src]="book.image_url" alt="{{ book.title }}" class="book-image">
+      <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Book Condition:</strong> {{ book.condition }}</p> 
+        <p><strong>Price:</strong> {{ book.price | currency:'USD' }}</p>
+        <p><strong>Description:</strong></p>
+        <p>{{ book.description }}</p>
+  
+        <button (click)="addToCart(book)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!book">
+    <p>Loading book details...</p>
+  </div> -->

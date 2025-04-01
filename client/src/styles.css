@@ -1,0 +1,9 @@
+/* client/src/styles.css */
+/* Global Styles */
+
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+  }
+  
+  /* You can add more global styles here if needed */

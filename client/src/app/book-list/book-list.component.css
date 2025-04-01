@@ -1,0 +1,151 @@
+/* client/src/app/book-list/book-list.component.css */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+       margin-top: 20px;
+  }
+  /* ... other styles ... */
+
+
+
+.book-list-image {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+  display: block; /* Prevent extra space below inline images */
+  margin: 0 auto; /* Center the image in the cell */
+}
+
+/* ... other styles ... */
+  .book-table th, .book-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .book-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .book-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .book-table img {
+    vertical-align: middle;
+  }
+  
+  .book-table a {
+      padding: 6px 10px;
+  background-color: #28a745; /* Green for view details */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  }
+  
+  .book-table a:hover {
+  background-color: #218838;
+  }   
+  
+  .book-table button {
+    padding: 6px 10px;
+    background-color: #007bff; /* Blue for add to cart */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .book-table button:hover {
+    background-color: #0056b3;
+  }
+  /* client/src/app/book-list/book-list.component.css */
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse; /* Single border for table */
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.book-table th,
+.book-table td {
+  border: 1px solid #ddd; /* Light grey border for cells */
+  padding: 8px 12px;
+  text-align: center; /* Align text to the left */
+}
+
+.book-table th {
+  background-color: #f4f4f4; /* Light grey background for header */
+  color: #333; /* Dark text for header */
+  font-weight: bold;
+}
+
+.book-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light grey for even rows for readability */
+}
+
+.book-table tbody tr:hover {
+  background-color: #e0e0e0; /* Slightly darker grey on row hover */
+}
+
+.book-table td:first-child { /* Style for the first cell (Image) */
+  text-align: center; /* Center the image in the cell */
+}
+
+.book-table td img {
+  max-width: 50px; /* Keep image max width */
+  max-height: 50px; /* Keep image max height */
+  display: block; /* Prevent extra space below image */
+  margin: 0 auto; /* Center image horizontally in cell */
+  border-radius: 4px; /* Optional: Rounded corners for images */
+}
+
+.book-table td a {
+  display: inline-block; /* Make links behave like inline blocks */
+  padding: 6px 10px;
+  background-color: #007bff; /* Blue background for "View Details" link */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em; /* Slightly smaller font for action links */
+}
+
+.book-table td a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.book-table td button {
+  padding: 6px 10px;
+  font-size: 0.9em; /* Slightly smaller font for buttons */
+  background-color: #28a745; /* Green for "Add to Cart" button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-table td button:hover {
+  background-color: #1e7e34; /* Darker green on button hover */
+}
+.book-table td .sold-indicator {
+  color: red;
+  font-weight: bold; /* Optional, but good to have for emphasis */
+}
+
+/* Style for "No books available yet." message */
+p[ngIf="!books || books.length === 0"] {
+  margin-top: 20px;
+  font-style: italic;
+  color: #777;
+  text-align: center;
+}
+
+h1 {
+  text-align: center; /* Slightly left-aligned */
+  color: #2E8B8B; /* Dark Cyan (a dark teal) - Matches the image closely */
+  font-size: 2.2em; /* Adjust for desired size */
+  margin-bottom: 25px; /* Add space below the heading */
+  font-weight: bold; /* Make the text bold */
+}
