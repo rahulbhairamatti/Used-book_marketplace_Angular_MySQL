@@ -93,7 +93,6 @@ Once both the backend and frontend are running, you should be able to access the
 
 ## Database Setup (SQL)
 
-[You should add specific instructions here on how to set up your SQL database. This would typically include details like the database name, connection configuration (host, port, username, password), and any necessary steps to create the database schema or run migrations. For example:]
 
 1.  Ensure you have an SQL server running.
 2.  Create a database named `book_marketplace` (or your preferred name).
@@ -101,4 +100,4 @@ Once both the backend and frontend are running, you should be able to access the
 4.  Run any necessary SQL scripts or migrations to create the required tables and schema.
 
 ## Further Information
-
+In this I added quantity of books just to give increaing quatity even though it's used-book. And also few files I committed out if you want to add those make changes according for that make changes in session management to add those files like order-history .etc
