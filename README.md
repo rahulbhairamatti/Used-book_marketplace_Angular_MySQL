@@ -101,4 +101,4 @@ Once both the backend and frontend are running, you should be able to access the
 4.  Run any necessary SQL scripts or migrations to create the required tables and schema.
 
 ## Further Information
-In this I added quantity of books just to give increaing quatity even though it's used-book. And also few files I committed out if you want to add those make changes according for that make changes in session management to add those files like order-history .etc
+In this I added quantity of books just to scope up the project by quantity feature even though it's used-book. And also few files I commented out if you want to add those make changes according for that make changes in session management.
