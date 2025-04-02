@@ -57,23 +57,39 @@ The frontend for this application is built using Angular. You mentioned that the
     # yarn install
     ```
     This will create the `node_modules` folder containing all the Angular and other frontend dependencies.
+3. **Install the Angular CLI globally:**
+       Open your terminal or command prompt.
 
-3.  **Build the Angular application:**
+      Run the following command to install the Angular CLI globally on your system:
+
+        ```Bash
+      npm install -g @angular/cli
+    ```
+     The -g flag means that the Angular CLI will be installed globally, allowing you to use the ng command from any directory on your computer.
+     Verify the installation: Once the installation is complete, you can verify it by running the following command in your terminal:
+
+     ```Bash
+    ng version
+    ```
+    This command should print information about your Angular CLI version and other related packages. If you see this information without any errors, the Angular CLI is 
+    installed correctly.
+4.  **Build the Angular application:**
     Before you can run the frontend in a production-like environment, you need to build it. Use the Angular CLI command:
     ```bash
     ng build
     ```
     This command compiles your Angular application and creates an optimized build in the `dist` folder within your frontend directory.
 
-4.  **Start the frontend development server (for development):**
+5.  **Start the frontend development server (for development):**
     If you are actively working on the frontend and want to use features like live reloading, you can use the Angular CLI development server:
     ```bash
     ng serve -o
     ```
     This command will build and serve your application, and the `-o` flag will automatically open it in your default web browser.
 
-5.  **Serving the built application (for production or testing the build):**
-    After running `ng build`, you can serve the contents of the `dist` folder using a simple HTTP server. You can use a package like `serve` for this. If you don't have it installed globally, you can install it:
+6.  **Serving the built application (for production or testing the build):**
+    After running `ng build`, you can serve the contents of the `dist` folder using a simple HTTP server. You can use a package like `serve` for this. If you don't have it 
+   installed globally, you can install it:
     ```bash
     npm install -g serve
     # or yarn global add serve
