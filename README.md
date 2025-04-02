@@ -1,7 +1,7 @@
 
 # Used Book Marketplace
 
-This is used book marketplace whcih in this user can buy or sell there books.
+This is used book marketplace which in this user can buy or sell there books.
 
 ## Prerequisites
 
