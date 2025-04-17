@@ -17,6 +17,7 @@ CREATE TABLE Products (
     price DECIMAL(10, 2) NOT NULL,
     description TEXT,
     image_url VARCHAR(255),
+    seller_name VARCHAR(255), -- Added seller_name column
     quantity_in_stock INT UNSIGNED,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
